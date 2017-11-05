@@ -1,0 +1,14 @@
+body {
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+div {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+svg {
+  transform: translate(-29%);
+}
