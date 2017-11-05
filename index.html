@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <title>Marathon Map</title>
     	<script src="d3.js"></script>
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="jquery-3.2.1.min.js"></script>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="bootstrap.min.css" />
   </head>
   <body>
     <div id="map" class="col-md-3"></div>
     <div class="col-md-9">
-      <h1>Marathon Map</h1>
+      <div class='landmark' id='welcome'>
+        <h1>Marathon Map</h1>
+      </div>
     </div>
     <script type="text/javascript">
       //Width and height
@@ -102,9 +105,13 @@
                     .style("fill", "blue")
                     .style("stroke", "orange")
                 })
+                .on("click", function(d) {
+                  $('div.col-md-9').html(`<div class='landmark'><h1>${d.featureName}</h1></div>`)
+                })
             })
           })
         })
     </script>
+    <script src="jquery.js"></script>
   </body>
 </html>

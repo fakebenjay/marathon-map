@@ -12,3 +12,7 @@ div {
 svg {
   transform: translate(-29%);
 }
+
+div.landmark {
+  text-align: center;
+}
