@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('div.col-md-9').html("<div class='landmark' id='welcome'><h1>Marathon Map</h1></div>")
+  $('div.col-md-9').html("<div class='landmark' id='welcome'><h1>Marathon Map</h1><p>Click any of the landmarks on the map to see photos before and during the 2017 New York City Marathon!</p></div>")
 
   $("body").on("click", "input.button", function(e) {
     e.preventDefault()

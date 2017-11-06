@@ -77,7 +77,7 @@
               yPoint = parseFloat(point.getAttribute('lat'))
               counter += 1
             })
-            d3.csv("landmarkers.csv", (data) => {
+            d3.csv("landmark-spots.csv", (data) => {
               svg.selectAll("circle")
                 .data(data)
                 .enter()
@@ -106,7 +106,12 @@
                     .style("stroke", "orange")
                 })
                 .on("click", function(d) {
-                  $('div.col-md-9').html(`<div class='photo-landmark landmark'><h1>${d.featureName}</h1><br><img class='photo' src='img/${d.className}-during.jpg' alt='${d.featureName}'><br></br><input type='button' class='button' id='${d.className}' value='See Before the Marathon'></input></div>`)
+                  debugger
+                  if (d.className === 'marcus-garvey-park' || d.className === 'upper-east-side' || d.className === 'bedford-avenue') {
+                    $('div.col-md-9').html(`<div class='photo-landmark landmark'><h1>${d.featureName}</h1><small>Photo by <a href='http://instagram.com/cmdabney'>Christina Dabney</a></small><br><img class='photo' src='img/${d.className}-during.jpg' alt='${d.featureName}'><br></br><input type='button' class='button' id='${d.className}' value='See Before the Marathon'></input></div>`)
+                  } else {
+                    $('div.col-md-9').html(`<div class='photo-landmark landmark'><h1>${d.featureName}</h1><small>Photo by <a href='http://instagram.com/fakebenjay'>Ben Jay</a></small><br><img class='photo' src='img/${d.className}-during.jpg' alt='${d.featureName}'><br></br><input type='button' class='button' id='${d.className}' value='See Before the Marathon'></input></div>`)
+                  }
                 })
             })
           })
