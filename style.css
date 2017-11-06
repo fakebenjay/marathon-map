@@ -16,3 +16,8 @@ svg {
 div.landmark {
   text-align: center;
 }
+
+img.photo {
+  max-width: 70%;
+  max-height: 70%;
+}

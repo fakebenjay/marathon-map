@@ -12,7 +12,7 @@
     <div id="map" class="col-md-3"></div>
     <div class="col-md-9">
       <div class='landmark' id='welcome'>
-        <h1>Marathon Map</h1>
+        <h1></h1>
       </div>
     </div>
     <script type="text/javascript">
@@ -77,7 +77,7 @@
               yPoint = parseFloat(point.getAttribute('lat'))
               counter += 1
             })
-            d3.csv("points-of-interest.csv", (data) => {
+            d3.csv("landmarkers.csv", (data) => {
               svg.selectAll("circle")
                 .data(data)
                 .enter()
@@ -90,28 +90,28 @@
                 })
                 .attr("r", 7)
                 .attr("id", function(d) {
-                  return d.featureName
+                  return d.className
                 })
                 .style("fill", "blue")
                 .style("stroke", "orange")
                 .style("stroke-width", 1)
                 .on("mouseover", function(d) {
-                  d3.select("#" + d.featureName)
+                  d3.select("#" + d.className)
                     .style("fill", "orange")
                     .style("stroke", "blue")
                 })
                 .on("mouseout", function(d) {
-                  d3.select("#" + d.featureName)
+                  d3.select("#" + d.className)
                     .style("fill", "blue")
                     .style("stroke", "orange")
                 })
                 .on("click", function(d) {
-                  $('div.col-md-9').html(`<div class='landmark'><h1>${d.featureName}</h1></div>`)
+                  $('div.col-md-9').html(`<div class='photo-landmark landmark'><h1>${d.featureName}</h1><br><img class='photo' src='img/${d.className}-during.jpg' alt='${d.featureName}'><br></br><input type='button' class='button' id='${d.className}' value='See Before the Marathon'></input></div>`)
                 })
             })
           })
         })
     </script>
-    <script src="jquery.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
