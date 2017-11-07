@@ -107,9 +107,9 @@
                 })
                 .on("click", function(d) {
                   if (d.className === 'marcus-garvey-park' || d.className === 'upper-east-side' || d.className === 'bedford-avenue') {
-                    $('div.col-md-9').html(`<div class='photo-landmark landmark'><h1>${d.featureName}</h1><p>Photo by <a href='http://instagram.com/cmdabney'>Christina Dabney</a></p><br><img class='photo' src='img/${d.className}-during.jpg' alt='${d.featureName}'><br></br><input type='button' class='button' id='${d.className}' value='See Before the Marathon'></input></div>`)
+                    $('div.col-md-9').html(`<div class='photo-landmark landmark'><h1>${d.featureName}</h1><small>Photo by <a href='http://instagram.com/cmdabney'>Christina Dabney</a></small><br><img class='photo' src='img/${d.className}-during.jpg' alt='${d.featureName}'><br></br><input type='button' class='button' id='${d.className}' value='See Before the Marathon'></input></div>`)
                   } else {
-                    $('div.col-md-9').html(`<div class='photo-landmark landmark'><h1>${d.featureName}</h1><p>Photo by <a href='http://instagram.com/fakebenjay'>Ben Jay</a></p><br><img class='photo' src='img/${d.className}-during.jpg' alt='${d.featureName}'><br></br><input type='button' class='button' id='${d.className}' value='See Before the Marathon'></input></div>`)
+                    $('div.col-md-9').html(`<div class='photo-landmark landmark'><h1>${d.featureName}</h1><small>Photo by <a href='http://instagram.com/fakebenjay'>Ben Jay</a></small><br><img class='photo' src='img/${d.className}-during.jpg' alt='${d.featureName}'><br></br><input type='button' class='button' id='${d.className}' value='See Before the Marathon'></input></div>`)
                   }
                 })
             })
